@@ -56,25 +56,25 @@ def get_vectorstore(text_chunks):
 
 
 def get_conversation_chain(vectorstore):
-    llm_model = os.environ["OPENAI_API_MODEL"]="llama3"
-    os.environ["OPENAI_API_BASE"]
-    os.environ["OPENAI_API_KEY"]
+    llm_model = os.environ["OPENAI_API_MODEL"]="ai-chat"
+#RAG-FR"
+#vicuna-13b-16k"
+#qwen2"
+#RAG"
+#llama3"
+#phi3"
+#wizardlm2"
+    #os.environ["OPENAI_API_BASE"]="https://api-ai.ai-dev.fake-domain.name/v1"
+    #os.environ["OPENAI_API_KEY"]="sk-i23-n5W-kyD"
 
     llm = ChatOpenAI(temperature=0.2,model_name=llm_model)
-#qwen-32b")
-#command-r")
-#assistant")
-#vicuna:13b-v1.5-16k-q8_0")
-#vicuna:33b")
-#mixtral")
-#vicuna:13b-16k")
 
     memory = ConversationBufferMemory(
         memory_key='chat_history', return_messages=True)
     conversation_chain = ConversationalRetrievalChain.from_llm(
         llm=llm,
         retriever=vectorstore.as_retriever(),
-#search_kwargs={"k": 4}),
+#search_kwargs={"k": 5}),
         memory=memory
     )
     return conversation_chain
