@@ -65,7 +65,6 @@ def get_conversation_chain(vectorstore):
 #phi3"
 #wizardlm2"
     #os.environ["OPENAI_API_BASE"]="https://api-ai.ai-dev.fake-domain.name/v1"
-    #os.environ["OPENAI_API_KEY"]="sk-i23-n5W-kyD"
 
     llm = ChatOpenAI(temperature=0.2,model_name=llm_model)
 
